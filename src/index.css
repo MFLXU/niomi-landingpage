@@ -1,0 +1,291 @@
+/* ----- Google Fonts -----*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* ----- Tailwinds Css -----*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ----- Some Default Styling -----*/
+
+body{
+  font-family: 'Inter', sans-serif;
+}
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .container{
+    overflow: hidden;
+  }
+  .aurora{
+    display: none;
+  }
+}
+.hero{
+  position: relative;
+}
+.aurora{
+  position: absolute;
+  height: 1000px;
+  width: 1000px;
+  border-radius: 9999px;
+  background-color: #54BD95;
+  filter: blur(200px);
+  z-index: -1;
+  opacity: 0.5;
+}
+@layer base {
+  /* ----- Default Styling -----*/
+  body{
+    @apply bg-slate-50
+  }
+  section{
+    @apply md:py-20 py-10 px-4 md:px-0
+  }
+  .btn-primary{
+    @apply text-white bg-[#54BD95] py-3 px-6 rounded-lg hover:bg-emerald-500 duration-300
+  }
+  .btn-ghost{
+    @apply  hover:bg-slate-100 border border-black py-3 px-6 rounded-lg duration-300
+  }
+  /* ----- Navbar -----*/
+  nav{
+    @apply w-full left-0 top-0 fixed z-20
+  }
+  .nav__con{
+    @apply flex items-center justify-between py-4 px-4 md:px-0
+  }
+  .nav__logo{
+    @apply font-extrabold text-4xl text-[#54BD95]
+  }
+  .nav__links{
+    @apply md:flex justify-center gap-8 items-center hidden
+  }
+  .nav__link{
+    @apply text-neutral-500 hover:text-black
+  }
+
+  .nav__actions{
+    @apply md:flex gap-8 items-center justify-center hidden
+  }
+  /* ----- Hero -----*/
+
+  .hero__con{
+    @apply grid md:grid-cols-2 gap-8 w-fit overflow-hidden
+  }
+  .hero__text{
+    @apply flex flex-col gap-4
+  }
+  .hero__img{
+    @apply row-start-1 md:col-start-2 w-fit overflow-hidden
+  }
+  .hero__img img {
+    @apply w-[100vw]
+  }
+  .hero__text > img {
+    @apply mb-10 md:w-[80%]
+  }
+  .hero__text h1{
+    @apply text-6xl md:text-7xl font-extrabold
+  }
+  .hero__btns{
+    @apply flex flex-col md:flex-row gap-4
+  }
+  .hero__btns a {
+    @apply flex items-center
+  }
+  /* ----- Company -----*/
+  .company__con{
+    @apply flex justify-center items-center gap-12 flex-col text-center
+  }
+  .company__con h2 {
+    @apply text-4xl font-bold
+  }
+  .company__logos{
+    @apply grid gap-12 md:grid-cols-5 items-center overflow-visible
+  }
+  .company__logos div{
+    @apply grayscale-[100] hover:grayscale-0 duration-300 hover:scale-105
+  }
+  /* ----- Partners -----*/
+  .ps__con  {
+    @apply grid md:grid-cols-2 gap-8
+  }
+  .ps__text{
+    @apply flex flex-col gap-4
+  }
+  .ps__text-title{
+    @apply text-4xl font-bold
+  }
+  .ps__text p:nth-child(2){
+    @apply  text-gray-500
+  }
+  .ps__rating{
+    @apply  grid grid-cols-2 mt-10
+  }
+  .ps__rating div{
+    @apply grid gap-2
+  }
+  .ps__rating span {
+    @apply font-bold
+  }
+  .ps__percs{
+    @apply flex flex-col gap-8
+  }
+  .ps__percs article{
+    @apply flex gap-4
+  }
+  .perc-icon {
+    @apply bg-white p-4 rounded-lg h-fit
+  }
+  .perc-icon img {
+    @apply  w-6
+  }
+  .ps__percs article p:nth-child(1){
+    @apply font-bold text-xl
+  }
+  .ps__percs article p:nth-child(2){
+    @apply text-gray-400
+  }
+  /* ----- Features -----*/
+  .features__con{
+    @apply flex flex-col gap-8
+  }
+  .features__header{
+    @apply flex flex-col gap-4 md:flex-row items-center justify-between
+  }
+  .features__header h2{
+    @apply text-4xl md:text-6xl font-bold md:w-[23%]
+  }
+  .features__header p {
+    @apply md:w-[30%] text-center
+  }
+  .features__list{
+    @apply grid md:grid-cols-3 md:gap-14 gap-4
+  }
+  .feature{
+    @apply hover:bg-white rounded-3xl hover:scale-105 duration-300 hover:shadow-xl
+  }
+  .feature-text{
+    @apply px-4 py-8
+  }
+  .feature p:nth-child(1){
+    @apply font-bold text-2xl mb-2
+  }
+  .feature p:nth-child(2){
+    @apply text-gray-400
+  }
+  /* ----- Benifits -----*/
+  .benifits__con{
+    @apply grid md:grid-cols-2 gap-8
+  }
+  .benifits__text{
+    @apply flex flex-col gap-4
+  }
+  .benifits__text h2{
+    @apply text-4xl md:text-6xl font-bold mb-8
+  }
+  .benef{
+    @apply flex items-center gap-4 font-medium
+  }
+  /* ----- Plans -----*/
+  .plans__con{
+    @apply flex flex-col gap-8 items-center justify-center
+  }
+  .plans__con h2{
+    @apply text-4xl md:text-6xl font-bold
+  }
+  .plans__con > p {
+    @apply text-gray-400
+  }
+  .billing-opt{
+    @apply p-2 bg-white flex items-center justify-center gap-4 rounded-lg
+  }
+  .billing-opt .btn {
+    @apply hover:bg-slate-100 py-3 px-6 rounded-lg duration-300
+  }
+  .plans{
+    @apply grid md:grid-cols-3 gap-8
+  }
+  .plan{
+    @apply p-4 rounded-lg bg-white flex flex-col shadow-md gap-4 text-center
+  }
+  .plan-title {
+    @apply text-7xl font-bold
+  }
+  .plan-desc {
+    @apply text-gray-400 w-[50%] mx-auto
+  }
+  .plan-price{
+    @apply font-extrabold text-6xl mt-4
+  }
+  .plan-content{
+    @apply bg-slate-50 p-4 flex flex-col gap-4 rounded-lg mt-6
+  }
+  .plan-btn{
+     @apply py-3 px-6 rounded-lg bg-white text-[#54BD95] font-medium mt-4
+  }
+  .plan:hover{
+    @apply scale-105  bg-[#54BD95] text-white duration-300
+  }
+  .plan:hover .plan-desc{
+    @apply text-white
+  }
+  .plan:hover .plan-content {
+    @apply text-black bg-white duration-300
+  }
+  .plan:hover .plan-btn{
+    @apply bg-[#54BD95] text-white duration-300
+  }
+  /* ----- Contact -----*/
+  .contact__section{
+    @apply bg-[#161C28] text-white
+  }
+  .contact__con{
+    @apply grid md:grid-cols-2 gap-8 md:gap-20
+  }
+  .contact__text {
+    @apply flex flex-col gap-4 justify-between
+  }
+  .contact__con h2{
+    @apply md:text-6xl font-bold mb-8 text-4xl
+  }
+  .contact__text p {
+    @apply text-gray-400
+  }
+  .contact__text > div {
+    @apply flex gap-4 mt-8 justify-center
+  }
+  .contact__form{
+    @apply bg-[#222938] rounded-lg p-10 flex flex-col items-center justify-center gap-4
+  }
+  .contact__form > p{
+    @apply text-2xl font-medium
+  }
+  .contact__form form {
+    @apply flex flex-col gap-4 w-full
+  }
+  input,textarea{
+    @apply rounded-lg text-sm text-black outline-0 px-2 py-4
+  }
+  /* ----- Footer -----*/
+  footer{
+    @apply bg-[#161C28] text-white md:pt-20 pt-10 px-4 md:px-0
+  }
+  .footer__con{
+    @apply grid md:grid-cols-2 md:gap-20 gap-8
+  }
+  .footer__cta{
+    @apply flex flex-col gap-4
+  }
+  .footer__cta > div{
+    @apply w-full flex  border p-2 rounded-full justify-between items-center
+  }
+  .footer__cta > div input {
+    @apply bg-inherit text-white text-xl py-0 px-4 w-fit
+  }
+  .footer__links{
+    @apply grid md:grid-cols-3 gap-4 grid-cols-2
+  }
+
+}
